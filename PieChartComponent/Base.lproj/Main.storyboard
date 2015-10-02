@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNt-ep-Dxn">
+                                <rect key="frame" x="123" y="203" width="354" height="193"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrc-6J-jwh" customClass="PieChartView">
+                                        <rect key="frame" x="20" y="37" width="120" height="120"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="X6E-AK-Iup"/>
+                                            <constraint firstAttribute="width" constant="120" id="ZgX-Pz-ion"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jbz-Je-nGm" userLabel="collection view container">
+                                        <rect key="frame" x="150" y="37" width="184" height="120"/>
+                                        <subviews>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fei-bQ-vVP">
+                                                <rect key="frame" x="52" y="83" width="39" height="37"/>
+                                                <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="currentPageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </pageControl>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7MG-Gs-D7G">
+                                                <rect key="frame" x="0.0" y="30" width="184" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="kVa-rP-jOP">
+                                                    <size key="itemSize" width="50" height="80"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="1w4-xn-pzY"/>
+                                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="9pY-pW-F8O"/>
+                                                </connections>
+                                            </collectionView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="7Kc-lF-2RR"/>
+                                            <constraint firstAttribute="width" constant="184" id="H3Y-e7-rBe"/>
+                                            <constraint firstAttribute="centerX" secondItem="fei-bQ-vVP" secondAttribute="centerX" constant="20" id="MxW-AP-vFR"/>
+                                            <constraint firstAttribute="bottom" secondItem="fei-bQ-vVP" secondAttribute="bottom" id="ThE-z8-Fla"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lrc-6J-jwh" firstAttribute="top" secondItem="aNt-ep-Dxn" secondAttribute="top" constant="37" id="6Jq-Rg-wDe"/>
+                                    <constraint firstItem="lrc-6J-jwh" firstAttribute="leading" secondItem="aNt-ep-Dxn" secondAttribute="leading" constant="20" id="BDl-Tg-L9d"/>
+                                    <constraint firstItem="Jbz-Je-nGm" firstAttribute="leading" secondItem="lrc-6J-jwh" secondAttribute="trailing" constant="10" id="W7z-o3-WdI"/>
+                                    <constraint firstAttribute="height" constant="193" id="Xlv-SV-e73"/>
+                                    <constraint firstItem="Jbz-Je-nGm" firstAttribute="top" secondItem="aNt-ep-Dxn" secondAttribute="top" constant="37" id="cvw-bz-xnb"/>
+                                    <constraint firstAttribute="width" constant="354" id="f6G-yE-hXw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aNt-ep-Dxn" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="FNk-Ql-IXW"/>
+                            <constraint firstItem="aNt-ep-Dxn" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="QLH-lM-B6v"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="7MG-Gs-D7G" id="MDo-Tl-xNe"/>
+                        <outlet property="pageControl" destination="fei-bQ-vVP" id="Kjc-FO-P7q"/>
+                        <outlet property="pieChartView" destination="lrc-6J-jwh" id="646-aM-gan"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="368" y="208"/>
+        </scene>
+    </scenes>
+</document>
