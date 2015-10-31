@@ -1,5 +1,7 @@
 # Pie Chart Component
 Pie chart component for iOS with infinite scroll
 
-No need for documentation because the example is built into the project.
-If you have a question, contact me on twitter: @vitorventurin
+![alt tag](https://github.com/vitorventurin/PieChartComponent/blob/master/PieChartComponent/piechart.gif)
+
+No need for documentation because the example is built into project.
+If you have any question, contact me on twitter: @vitorventurin
