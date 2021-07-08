@@ -341,7 +341,7 @@ typedef enum {
 }
 
 - (PieChartItem *)itemForAngleInRadians:(CGFloat)radians{
-    CGFloat radiansWithOffset = radians;// - (M_PI + [self percentToRadians:self.lastSelectedItem.percentage])/2;
+    CGFloat radiansWithOffset = radians;
     
     NSUInteger selectedItemIndex = [self.configuration.items indexOfObject:self.lastSelectedItem];
     NSArray *sortedArray = [self.configuration.items subarrayWithRange:NSMakeRange(selectedItemIndex, self.configuration.items.count-selectedItemIndex)];
