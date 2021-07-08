@@ -140,12 +140,9 @@ int lastIndexOfPage;
     if (hasInfiniteScroll) {
         CGFloat offset = pageWidth * self.pieChartConfiguration.items.count;
         
-        // the first page(showing the last item) is visible and user is still scrolling to the left
         if (currentOffsetX < pageWidth && lastContentOffsetX > currentOffsetX) {
-            //            lastContentOffsetX = pageWidth * (self.pieChartConfiguration.items.count+1);
             lastContentOffsetX = currentOffsetX + offset;
         }
-        // the last page (showing the first item) is visible and the user is still scrolling to the right
         else if (currentOffsetX > offset && lastContentOffsetX < currentOffsetX) {
             lastContentOffsetX = currentOffsetX - offset;
         } else {
@@ -172,7 +169,6 @@ int lastIndexOfPage;
     int actualIndexOfPage = scrollView.contentOffset.x / scrollView.frame.size.width;
     [self.pieChartView setConfiguration:self.pieChartConfiguration];
     if (lastIndexOfPage != actualIndexOfPage) {
-        //        NSLog(@"page changed");
         PieChartItem* selectedItem;
         if (hasInfiniteScroll) {
             selectedItem = [infiniteArray objectAtIndex:actualIndexOfPage];
